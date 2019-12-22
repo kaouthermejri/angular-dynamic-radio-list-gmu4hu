@@ -1,0 +1,18 @@
+<br />
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <label *ngFor="let order of orders">
+    <input formControlName="orders" type="radio" [value]="order.id" />
+    {{order.name}}
+  </label>
+
+  <br>
+  <label *ngFor="let radiobutton of options">
+    <input type="radio" class="justify-right" formControlName="options" name="options" [value]="radiobutton.id">{{radiobutton.name}}
+    </label>
+
+   <p>Selection: {{form.value | json}}</p>
+   <p>{{Options}}</p>
+  <button>submit</button>
+</form>
